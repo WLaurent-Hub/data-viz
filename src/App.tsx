@@ -34,6 +34,9 @@ function App() {
     const result = ((new_value - last_value) / last_value) * 100;
     return result;
   }
+  const graphic_title =
+    year && animal && densityData ? `Nombre de ${animal} dans la commune de ${densityData['properties']['nom_comm_x']} entre 2017 et 2020` :
+    year && animal ? `Nombre de ${animal} en France entre 2017 et 2020`  : 'Représentation visuelle de la population des chats et chiens';
 
   return (
     <>
@@ -211,7 +214,7 @@ function App() {
                 <CardHeader>
                   <CardTitle>Graphique</CardTitle>
                   <CardDescription>
-                  {year && animal && densityData ? `Nombre de ${animal} dans la commune de ${densityData['properties']['nom_comm_x']} entre 2017 et 2020` : ''}
+                  {graphic_title}
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
