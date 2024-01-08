@@ -62,25 +62,25 @@ export function Overview({selectedYear, selectedAnimal}: GraphProps) {
         default: return null;
       }
     }
-    /*return null;*/
+    return null;
   };
 
   const data = [
     {
       name: "2017",
-      total: (selectedAnimal && selectedYear) ? calculateTotal("2017") : 9860236,
+      total: calculateTotal("2017"),
     },
     {
       name: "2018",
-      total: (selectedAnimal && selectedYear) ? calculateTotal("2018") : 9898810,
+      total: calculateTotal("2018"),
     },
     {
       name: "2019",
-      total: (selectedAnimal && selectedYear) ? calculateTotal("2019") : 9930949,
+      total: calculateTotal("2019"),
     },
     {
       name: "2020",
-      total: (selectedAnimal && selectedYear) ? calculateTotal("2020") : 9973306,
+      total: calculateTotal("2020"),
     }
   ];
 

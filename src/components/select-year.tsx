@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import { Check, ChevronsUpDown } from "lucide-react"
-
+import { useEffect } from "react"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import {
@@ -44,6 +44,11 @@ const frameworks = [
 
 export function SelectYear({ selectedYear, setSelectedYear}: selectedYearProps) {
   const [open, setOpen] = React.useState(false)
+
+  useEffect(() => {
+    setSelectedYear("2020");
+  }, [setSelectedYear]);
+
   return (
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>

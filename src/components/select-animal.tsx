@@ -8,12 +8,17 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useTheme } from "./theme-provider";
+import { useEffect } from "react";
 
 interface SelectAnimalProps {
   setSelectedAnimal: (value:string) => void;
 }
 
 export function SelectAnimal({ setSelectedAnimal}: SelectAnimalProps) {
+
+  useEffect(() => {
+    setSelectedAnimal("chien");
+  }, [setSelectedAnimal]);
 
   const { theme } = useTheme();
   const handleSelectChange = (value: string) => {

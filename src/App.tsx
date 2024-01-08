@@ -36,7 +36,7 @@ function App() {
   }
   const graphic_title =
     year && animal && densityData ? `Nombre de ${animal} dans la commune de ${densityData['properties']['nom_comm_x']} entre 2017 et 2020` :
-    year && animal ? `Nombre de ${animal} en France entre 2017 et 2020`  : 'Nombre de chien en France entre 2017 et 2020';
+    year && animal && `Nombre de ${animal} en France entre 2017 et 2020`;
 
   return (
     <>
@@ -81,15 +81,15 @@ function App() {
                   </svg>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold">{ pop_data.nb_comm ? pop_data.nb_comm : 34033 }</div>
+                  <div className="text-2xl font-bold">{ pop_data.nb_comm && pop_data.nb_comm }</div>
                     <p className="text-xs text-muted-foreground">
-                      {pop_data.nb_comm ?
+                      {pop_data.nb_comm &&
                         (
                           (evolve_pop(year_prec.nb_comm, pop_data.nb_comm) > 0 ?
                               `+${evolve_pop(year_prec.nb_comm, pop_data.nb_comm).toFixed(1)}` :
                               evolve_pop(year_prec.nb_comm, pop_data.nb_comm).toFixed(1)
                           ) + "% depuis l'année dernière"
-                        ) : "+0.6% depuis l'année dernière"
+                        )
                       }
                     </p>
                 </CardContent>
@@ -115,15 +115,15 @@ function App() {
                   </svg>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold">{ pop_data.pop_max ? pop_data.pop_max : 28235 }</div>
+                  <div className="text-2xl font-bold">{ pop_data.pop_max && pop_data.pop_max }</div>
                   <p className="text-xs text-muted-foreground">
-                    {pop_data.nb_comm ?
+                    {pop_data.nb_comm &&
                         (
                           (evolve_pop(year_prec.pop_max, pop_data.pop_max) > 0 ?
                               `+${evolve_pop(year_prec.pop_max, pop_data.pop_max).toFixed(1)}` :
                               evolve_pop(year_prec.pop_max, pop_data.pop_max).toFixed(1)
                           ) + "% depuis l'année dernière"
-                        ) : "-1.1% depuis l'année dernière"
+                        )
                       }
                   </p>
                 </CardContent>
@@ -150,15 +150,15 @@ function App() {
                   </svg>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold">{ pop_data.pop_min ? pop_data.pop_min : 1 }</div>
+                  <div className="text-2xl font-bold">{ pop_data.pop_min && pop_data.pop_min}</div>
                   <p className="text-xs text-muted-foreground">
-                    {pop_data.nb_comm ?
+                    {pop_data.nb_comm &&
                         (
                           (evolve_pop(year_prec.pop_min, pop_data.pop_min) > 0 ?
                               `+${evolve_pop(year_prec.pop_min, pop_data.pop_min).toFixed(1)}` :
                               evolve_pop(year_prec.pop_min, pop_data.pop_min).toFixed(1)
                           ) + "% depuis l'année dernière"
-                        ) : "0.0% depuis l'année dernière"
+                        )
                       }
                   </p>
                 </CardContent>
@@ -185,15 +185,15 @@ function App() {
                   </svg>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold">{ pop_data.pop_med ? pop_data.pop_med : 129 }</div>
+                  <div className="text-2xl font-bold">{ pop_data.pop_med && pop_data.pop_med }</div>
                   <p className="text-xs text-muted-foreground">
-                    {pop_data.nb_comm ?
+                    {pop_data.nb_comm &&
                         (
                           (evolve_pop(year_prec.pop_med, pop_data.pop_med) > 0 ?
                               `+${evolve_pop(year_prec.pop_med, pop_data.pop_med).toFixed(1)}` :
                               evolve_pop(year_prec.pop_med, pop_data.pop_med).toFixed(1)
                           ) + "% depuis l'année dernière"
-                        ) : "+1.2% depuis l'année dernière"
+                        )
                       }
                   </p>
                 </CardContent>
@@ -203,7 +203,7 @@ function App() {
               <Card className="col-span-4">
                 <CardHeader>
                   <CardTitle>
-                    Densité de { selectedAnimal ? selectedAnimal : "chien"} par commune en {selectedYear ? selectedYear : '2020'}
+                    Densité de { selectedAnimal} par commune en {selectedYear}
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="flex justify-center items-center p-0">
