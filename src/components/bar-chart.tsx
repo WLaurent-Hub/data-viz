@@ -62,25 +62,25 @@ export function Overview({selectedYear, selectedAnimal}: GraphProps) {
         default: return null;
       }
     }
-    return null;
+    /*return null;*/
   };
 
   const data = [
     {
       name: "2017",
-      total: calculateTotal("2017"),
+      total: (selectedAnimal && selectedYear) ? calculateTotal("2017") : 9860236,
     },
     {
       name: "2018",
-      total: calculateTotal("2018"),
+      total: (selectedAnimal && selectedYear) ? calculateTotal("2018") : 9898810,
     },
     {
       name: "2019",
-      total: calculateTotal("2019"),
+      total: (selectedAnimal && selectedYear) ? calculateTotal("2019") : 9930949,
     },
     {
       name: "2020",
-      total: calculateTotal("2020"),
+      total: (selectedAnimal && selectedYear) ? calculateTotal("2020") : 9973306,
     }
   ];
 
@@ -92,7 +92,7 @@ export function Overview({selectedYear, selectedAnimal}: GraphProps) {
   };
 
   return (
-    <ResponsiveContainer width="100%" height={550}>
+    <ResponsiveContainer width="100%" height={450}>
       <LineChart data={data}>
         <XAxis
           dataKey="name"
@@ -117,7 +117,7 @@ export function Overview({selectedYear, selectedAnimal}: GraphProps) {
         <Legend align="left" verticalAlign="bottom" wrapperStyle={{ paddingBottom: "20px", paddingTop: "20px" }} />
         <Line type="monotone"
               dataKey="total"
-              name={selectedAnimal && selectedYear ? `Évolution du nombre de ${selectedAnimal} entre 2017 et 2020` : "Choisir un animal et une année puis cliquer sur la carte"}
+              name={selectedAnimal && selectedYear ? `Évolution du nombre de ${selectedAnimal} entre 2017 et 2020` : `Évolution du nombre de chien entre 2017 et 2020`}
               stroke="#6d28d9"
               strokeWidth={2}/>
         <CartesianGrid stroke="#6d28d9" strokeDasharray="3 3" horizontal={false} vertical />

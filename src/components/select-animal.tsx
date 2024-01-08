@@ -27,7 +27,7 @@ export function SelectAnimal({ setSelectedAnimal}: SelectAnimalProps) {
   return (
     <Select onValueChange={handleSelectChange}>
       <SelectTrigger className="w-[215px]" style={selectTriggerStyle}>
-        <SelectValue placeholder="Sélectionner un animal" />
+        <SelectValue placeholder="Chien" />
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>

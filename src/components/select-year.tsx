@@ -54,7 +54,7 @@ export function SelectYear({ selectedYear, setSelectedYear}: selectedYearProps) 
           className="w-[220px] justify-between">
           {selectedYear
             ? frameworks.find((framework) => framework.value === selectedYear)?.label
-            : "Sélectionner une année"}
+            : "2020"}
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
