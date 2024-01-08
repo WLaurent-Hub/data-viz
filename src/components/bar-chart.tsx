@@ -92,7 +92,7 @@ export function Overview({selectedYear, selectedAnimal}: GraphProps) {
   };
 
   return (
-    <ResponsiveContainer width="100%" height={450}>
+    <ResponsiveContainer width="100%" height={550}>
       <LineChart data={data}>
         <XAxis
           dataKey="name"

@@ -21,7 +21,7 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   padding: 5px;
-  height: 475px;
+  height: 575px;
   width: calc(100% - 40px);
   border-radius: 5px;
   overflow: hidden;
